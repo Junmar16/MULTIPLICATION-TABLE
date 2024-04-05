@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Multiplication Table</h1>
+        <br>
+        <table id="mytable"></table>
+
+        <script>
+            function multiplication() {
+                var n = prompt("Enter the number of rows : ");
+                var m = prompt("Enter the value of columns : ");
+
+                while (n < 2 || n > 10) {
+                    alert("You are out of the range! Try entering numbers between 2 and 10.");
+                    return;
+                }
+
+                var table = document.getElementById("mytable");
+                table.innerHTML = "";
+
+                for (var i = 1; i <= n; i++) {
+                    var row = table.insertRow();
+                    for (var j = 1; j <= m; j++) {
+                        var cell = row.insertCell();
+                        cell.textContent = i * j;
+                    }
+                }
+            }
+            
+            multiplication(); 
+        </script>
+    </body>
+</html>
